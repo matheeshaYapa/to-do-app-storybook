@@ -1,0 +1,23 @@
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="space-between center">
+
+    <span class="mat-h2" fxFlex="50">{{task?.title}}</span>
+
+    <span fxFlex="30">
+      <span class="mat-h5">Created at:</span><span class="mat-h6">{{task?.insertedDate | date : 'medium'}}</span>
+    </span>
+
+    <span fxFlex="30" *ngIf="task?.state === 'COMPLETED'">
+      <span class="mat-h5">Completed at:</span><span class="mat-h6">{{task?.endDate | date : 'medium'}}</span>
+    </span>
+
+    <button fxFlex="10" *ngIf="task?.state === 'TO_DO'" mat-icon-button color="primary"
+            (click)="onCompleteTask(task?.id)" matTooltip="Complete Task">
+      <mat-icon>done</mat-icon>
+    </button>
+
+    <button fxFlex="10" mat-icon-button (click)="onDeleteTask(task?.id)" matTooltip="Delete Task" color="warn">
+      <mat-icon>delete_forever</mat-icon>
+    </button>
+  </div>
+</mat-card>

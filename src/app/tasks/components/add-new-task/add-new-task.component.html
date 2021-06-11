@@ -1,0 +1,16 @@
+<form [formGroup]="newTaskForm" (ngSubmit)="onSubmit()">
+  <div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutGap="2rem"
+       fxLayoutAlign.gt-sm="start start" fxLayoutAlign.lt-md="start center">
+    <mat-form-field style="width: 50%">
+      <mat-label>Task Title</mat-label>
+      <input type="text" matInput formControlName="title">
+      <mat-error *ngIf="formControls.title?.invalid && formControls.title?.errors?.required">
+        Task Title is required
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">
+      <span class="material-icons">add_task</span> Add
+    </button>
+  </div>
+</form>

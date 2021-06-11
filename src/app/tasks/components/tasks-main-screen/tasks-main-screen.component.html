@@ -1,0 +1,22 @@
+<app-add-new-task></app-add-new-task>
+
+<div fxLayout.gt-sm="row" fxLayout.lt-md="column" fxLayoutAlign.gt-sm="start start" fxLayoutAlign.lt-md="center center"
+     style="width: 100%">
+  <div fxLayout="column" fxLayoutAlign="center center" fxFlex.gt-sm="50">
+    <span class="mat-h1">To Do</span>
+    <app-task-list [taskList$]="toDoTasks$" style="width: 100%"></app-task-list>
+
+    <div *ngIf="(toDoTasks$ | async)?.length === 0" class="wrapper-message">
+      <div class="title-message">You have No To Do Tasks</div>
+    </div>
+
+  </div>
+
+  <div fxLayout="column" fxLayoutAlign="center center" fxFlex.gt-sm="50">
+    <span class="mat-h1">Completed</span>
+    <app-task-list [taskList$]="completedTasks$" style="width: 100%"></app-task-list>
+    <div *ngIf="(completedTasks$ | async)?.length === 0" class="wrapper-message">
+      <div class="title-message">You have No Completed Tasks</div>
+    </div>
+  </div>
+</div>

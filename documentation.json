@@ -1,0 +1,1946 @@
+{
+    "pipes": [],
+    "interfaces": [
+        {
+            "name": "TaskModel",
+            "id": "interface-TaskModel-b37f665e5f4f10d9063985bc3c696d77",
+            "file": "src/app/tasks/models/task.model.ts",
+            "type": "interface",
+            "sourceCode": "export interface TaskModel {\r\n  id: number;\r\n  title: string;\r\n  state: 'TO_DO' | 'COMPLETED';\r\n  endDate: Date | null;\r\n  insertedDate: Date;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "endDate",
+                    "type": "Date | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "id",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 2
+                },
+                {
+                    "name": "insertedDate",
+                    "type": "Date",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "state",
+                    "type": "\"TO_DO\" | \"COMPLETED\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 3
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
+    "injectables": [],
+    "classes": [
+        {
+            "name": "AddTask",
+            "id": "class-AddTask-e1ad990f80d06a2528ba8a0863cd9920",
+            "file": "src/app/tasks/actions/task.actions.ts",
+            "type": "class",
+            "sourceCode": "export class AddTask {\r\n  static readonly type = '[TASK] Add';\r\n\r\n  constructor(public payload: string) {}\r\n}\r\n\r\nexport class RemoveTask {\r\n  static readonly type = '[TASK] Remove';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class CompleteTask {\r\n  static readonly type = '[TASK] Complete';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class SortTasksByCompletedAt {\r\n  static readonly type = '[TASK] Sort by Completed at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n\r\nexport class SortTasksByCreatedAt {\r\n  static readonly type = '[TASK] Sort by Created at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "string"
+                    }
+                ],
+                "line": 2,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "string",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'[TASK] Add'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "CompleteTask",
+            "id": "class-CompleteTask-e1ad990f80d06a2528ba8a0863cd9920",
+            "file": "src/app/tasks/actions/task.actions.ts",
+            "type": "class",
+            "sourceCode": "export class AddTask {\r\n  static readonly type = '[TASK] Add';\r\n\r\n  constructor(public payload: string) {}\r\n}\r\n\r\nexport class RemoveTask {\r\n  static readonly type = '[TASK] Remove';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class CompleteTask {\r\n  static readonly type = '[TASK] Complete';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class SortTasksByCompletedAt {\r\n  static readonly type = '[TASK] Sort by Completed at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n\r\nexport class SortTasksByCreatedAt {\r\n  static readonly type = '[TASK] Sort by Created at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "number"
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "number",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'[TASK] Complete'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "RemoveTask",
+            "id": "class-RemoveTask-e1ad990f80d06a2528ba8a0863cd9920",
+            "file": "src/app/tasks/actions/task.actions.ts",
+            "type": "class",
+            "sourceCode": "export class AddTask {\r\n  static readonly type = '[TASK] Add';\r\n\r\n  constructor(public payload: string) {}\r\n}\r\n\r\nexport class RemoveTask {\r\n  static readonly type = '[TASK] Remove';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class CompleteTask {\r\n  static readonly type = '[TASK] Complete';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class SortTasksByCompletedAt {\r\n  static readonly type = '[TASK] Sort by Completed at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n\r\nexport class SortTasksByCreatedAt {\r\n  static readonly type = '[TASK] Sort by Created at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "number"
+                    }
+                ],
+                "line": 8,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "number",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 10,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'[TASK] Remove'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 8,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "SortTasksByCompletedAt",
+            "id": "class-SortTasksByCompletedAt-e1ad990f80d06a2528ba8a0863cd9920",
+            "file": "src/app/tasks/actions/task.actions.ts",
+            "type": "class",
+            "sourceCode": "export class AddTask {\r\n  static readonly type = '[TASK] Add';\r\n\r\n  constructor(public payload: string) {}\r\n}\r\n\r\nexport class RemoveTask {\r\n  static readonly type = '[TASK] Remove';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class CompleteTask {\r\n  static readonly type = '[TASK] Complete';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class SortTasksByCompletedAt {\r\n  static readonly type = '[TASK] Sort by Completed at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n\r\nexport class SortTasksByCreatedAt {\r\n  static readonly type = '[TASK] Sort by Created at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "\"asc\" | \"desc\""
+                    }
+                ],
+                "line": 20,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "\"asc\" | \"desc\"",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "\"asc\" | \"desc\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'[TASK] Sort by Completed at'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 20,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "SortTasksByCreatedAt",
+            "id": "class-SortTasksByCreatedAt-e1ad990f80d06a2528ba8a0863cd9920",
+            "file": "src/app/tasks/actions/task.actions.ts",
+            "type": "class",
+            "sourceCode": "export class AddTask {\r\n  static readonly type = '[TASK] Add';\r\n\r\n  constructor(public payload: string) {}\r\n}\r\n\r\nexport class RemoveTask {\r\n  static readonly type = '[TASK] Remove';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class CompleteTask {\r\n  static readonly type = '[TASK] Complete';\r\n\r\n  constructor(public payload: number) {}\r\n}\r\n\r\nexport class SortTasksByCompletedAt {\r\n  static readonly type = '[TASK] Sort by Completed at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n\r\nexport class SortTasksByCreatedAt {\r\n  static readonly type = '[TASK] Sort by Created at';\r\n\r\n  constructor(public payload: 'asc' | 'desc') {\r\n  }\r\n}\r\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "payload",
+                        "type": "\"asc\" | \"desc\""
+                    }
+                ],
+                "line": 27,
+                "jsdoctags": [
+                    {
+                        "name": "payload",
+                        "type": "\"asc\" | \"desc\"",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "payload",
+                    "type": "\"asc\" | \"desc\"",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "modifierKind": [
+                        114
+                    ]
+                },
+                {
+                    "name": "type",
+                    "defaultValue": "'[TASK] Sort by Created at'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 27,
+                    "modifierKind": [
+                        115,
+                        132
+                    ]
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        },
+        {
+            "name": "TaskState",
+            "id": "class-TaskState-3132ae13ab7e6dfb1cb45cd1a88f21d6",
+            "file": "src/app/tasks/states/task.state.ts",
+            "type": "class",
+            "sourceCode": "import {TaskModel} from '../models/task.model';\r\nimport {Action, Selector, State, StateContext} from '@ngxs/store';\r\nimport {AddTask, CompleteTask, RemoveTask, SortTasksByCompletedAt, SortTasksByCreatedAt} from '../actions/task.actions';\r\nimport {Observable, of} from 'rxjs';\r\n\r\nexport class TaskStateModel {\r\n  tasks: Array<TaskModel> | undefined;\r\n}\r\n\r\n@State<TaskStateModel>({\r\n  name: 'tasks',\r\n  defaults: {\r\n    tasks: []\r\n  }\r\n})\r\nexport class TaskState {\r\n\r\n  @Selector()\r\n  static getToDoTasks(state: TaskStateModel): Array<TaskModel> {\r\n    return state.tasks?.filter(task => task.state === 'TO_DO');\r\n  }\r\n\r\n  @Selector()\r\n  static getCompletedTasks(state: TaskStateModel): Array<TaskModel> {\r\n    return state.tasks?.filter(task => task.state === 'COMPLETED');\r\n  }\r\n\r\n  @Action(AddTask)\r\n  addTask({getState, patchState}: StateContext<TaskStateModel>, {payload}: AddTask): void {\r\n    const state = getState();\r\n    patchState({\r\n      tasks: [\r\n        ...state.tasks as Array<TaskModel>,\r\n        {state: 'TO_DO', id: Date.now(), insertedDate: new Date(), title: payload, endDate: null}\r\n      ]\r\n    });\r\n  }\r\n\r\n  @Action(RemoveTask)\r\n  removeTask({getState, patchState}: StateContext<TaskStateModel>, {payload}: RemoveTask): void {\r\n    patchState({\r\n      tasks: [\r\n        ...(getState().tasks as Array<TaskModel>).filter(task => task.id !== payload)\r\n      ]\r\n    });\r\n  }\r\n\r\n  @Action(CompleteTask)\r\n  completeTask({getState, patchState}: StateContext<TaskStateModel>, {payload}: CompleteTask): void {\r\n\r\n    const tasksAfterUpdate = (getState().tasks as Array<TaskModel>).map(task => {\r\n      if (task.id === payload) {\r\n        return Object.assign({}, task, {state: 'COMPLETED', endDate: new Date()});\r\n      }\r\n      return task;\r\n    });\r\n\r\n    patchState({\r\n      tasks: [\r\n        ...tasksAfterUpdate\r\n      ]\r\n    });\r\n  }\r\n\r\n  @Action(SortTasksByCreatedAt)\r\n  sortTasksByCreatedAt(\r\n    {getState, patchState}: StateContext<TaskStateModel>, {payload}: SortTasksByCreatedAt\r\n  ): Observable<Array<TaskModel>> {\r\n\r\n\r\n    const completedTasks = getState().tasks?.filter(task => task.state === 'COMPLETED');\r\n    let sortedTasks = new Array<TaskModel>();\r\n    if (completedTasks && payload === 'asc') {\r\n      sortedTasks = completedTasks.sort((a, b) => a.insertedDate.getTime() - b.insertedDate.getTime());\r\n    } else if (completedTasks && payload === 'desc') {\r\n      sortedTasks = completedTasks.sort((a, b) => b.insertedDate.getTime() - a.insertedDate.getTime());\r\n    }\r\n\r\n    return of(sortedTasks);\r\n\r\n  }\r\n\r\n  @Action(SortTasksByCompletedAt)\r\n  sortTasksByCompletedAt(\r\n    {getState, patchState}: StateContext<TaskStateModel>, {payload}: SortTasksByCompletedAt\r\n  ): Array<TaskModel> {\r\n\r\n\r\n    const completedTasks = getState().tasks?.filter(task => task.state === 'COMPLETED');\r\n    let sortedTasks = new Array<TaskModel>();\r\n    if (completedTasks && payload === 'asc') {\r\n      sortedTasks = completedTasks.sort((a, b) => {\r\n        if (a.endDate && b.endDate) {\r\n          return a.endDate.getTime() - b.endDate.getTime();\r\n        } else {\r\n          return 0;\r\n        }\r\n      });\r\n    } else if (completedTasks && payload === 'desc') {\r\n      sortedTasks = completedTasks.sort((a, b) => {\r\n        if (a.endDate && b.endDate) {\r\n          return b.endDate.getTime() - a.endDate.getTime();\r\n        } else {\r\n          return 0;\r\n        }\r\n      });\r\n    }\r\n\r\n    return sortedTasks;\r\n\r\n  }\r\n}\r\n",
+            "properties": [],
+            "methods": [
+                {
+                    "name": "addTask",
+                    "args": [
+                        {
+                            "type": "StateContext<TaskStateModel>"
+                        },
+                        {
+                            "type": "AddTask"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "decorators": [
+                        {
+                            "name": "Action",
+                            "stringifiedArguments": "AddTask"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "type": "StateContext<TaskStateModel>",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "AddTask",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "completeTask",
+                    "args": [
+                        {
+                            "type": "StateContext<TaskStateModel>"
+                        },
+                        {
+                            "type": "CompleteTask"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "decorators": [
+                        {
+                            "name": "Action",
+                            "stringifiedArguments": "CompleteTask"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "type": "StateContext<TaskStateModel>",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "CompleteTask",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getCompletedTasks",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": "TaskStateModel"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Array<TaskModel>",
+                    "typeParameters": [],
+                    "line": 24,
+                    "decorators": [
+                        {
+                            "name": "Selector",
+                            "stringifiedArguments": ""
+                        }
+                    ],
+                    "modifierKind": [
+                        115
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "TaskStateModel",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "getToDoTasks",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": "TaskStateModel"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Array<TaskModel>",
+                    "typeParameters": [],
+                    "line": 19,
+                    "decorators": [
+                        {
+                            "name": "Selector",
+                            "stringifiedArguments": ""
+                        }
+                    ],
+                    "modifierKind": [
+                        115
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "TaskStateModel",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "removeTask",
+                    "args": [
+                        {
+                            "type": "StateContext<TaskStateModel>"
+                        },
+                        {
+                            "type": "RemoveTask"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "decorators": [
+                        {
+                            "name": "Action",
+                            "stringifiedArguments": "RemoveTask"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "type": "StateContext<TaskStateModel>",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "RemoveTask",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sortTasksByCompletedAt",
+                    "args": [
+                        {
+                            "type": "StateContext<TaskStateModel>"
+                        },
+                        {
+                            "type": "SortTasksByCompletedAt"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Array<TaskModel>",
+                    "typeParameters": [],
+                    "line": 84,
+                    "decorators": [
+                        {
+                            "name": "Action",
+                            "stringifiedArguments": "SortTasksByCompletedAt"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "type": "StateContext<TaskStateModel>",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "SortTasksByCompletedAt",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "sortTasksByCreatedAt",
+                    "args": [
+                        {
+                            "type": "StateContext<TaskStateModel>"
+                        },
+                        {
+                            "type": "SortTasksByCreatedAt"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Array<TaskModel>>",
+                    "typeParameters": [],
+                    "line": 66,
+                    "decorators": [
+                        {
+                            "name": "Action",
+                            "stringifiedArguments": "SortTasksByCreatedAt"
+                        }
+                    ],
+                    "jsdoctags": [
+                        {
+                            "type": "StateContext<TaskStateModel>",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "type": "SortTasksByCreatedAt",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": []
+        },
+        {
+            "name": "TaskStateModel",
+            "id": "class-TaskStateModel-3132ae13ab7e6dfb1cb45cd1a88f21d6",
+            "file": "src/app/tasks/states/task.state.ts",
+            "type": "class",
+            "sourceCode": "import {TaskModel} from '../models/task.model';\r\nimport {Action, Selector, State, StateContext} from '@ngxs/store';\r\nimport {AddTask, CompleteTask, RemoveTask, SortTasksByCompletedAt, SortTasksByCreatedAt} from '../actions/task.actions';\r\nimport {Observable, of} from 'rxjs';\r\n\r\nexport class TaskStateModel {\r\n  tasks: Array<TaskModel> | undefined;\r\n}\r\n\r\n@State<TaskStateModel>({\r\n  name: 'tasks',\r\n  defaults: {\r\n    tasks: []\r\n  }\r\n})\r\nexport class TaskState {\r\n\r\n  @Selector()\r\n  static getToDoTasks(state: TaskStateModel): Array<TaskModel> {\r\n    return state.tasks?.filter(task => task.state === 'TO_DO');\r\n  }\r\n\r\n  @Selector()\r\n  static getCompletedTasks(state: TaskStateModel): Array<TaskModel> {\r\n    return state.tasks?.filter(task => task.state === 'COMPLETED');\r\n  }\r\n\r\n  @Action(AddTask)\r\n  addTask({getState, patchState}: StateContext<TaskStateModel>, {payload}: AddTask): void {\r\n    const state = getState();\r\n    patchState({\r\n      tasks: [\r\n        ...state.tasks as Array<TaskModel>,\r\n        {state: 'TO_DO', id: Date.now(), insertedDate: new Date(), title: payload, endDate: null}\r\n      ]\r\n    });\r\n  }\r\n\r\n  @Action(RemoveTask)\r\n  removeTask({getState, patchState}: StateContext<TaskStateModel>, {payload}: RemoveTask): void {\r\n    patchState({\r\n      tasks: [\r\n        ...(getState().tasks as Array<TaskModel>).filter(task => task.id !== payload)\r\n      ]\r\n    });\r\n  }\r\n\r\n  @Action(CompleteTask)\r\n  completeTask({getState, patchState}: StateContext<TaskStateModel>, {payload}: CompleteTask): void {\r\n\r\n    const tasksAfterUpdate = (getState().tasks as Array<TaskModel>).map(task => {\r\n      if (task.id === payload) {\r\n        return Object.assign({}, task, {state: 'COMPLETED', endDate: new Date()});\r\n      }\r\n      return task;\r\n    });\r\n\r\n    patchState({\r\n      tasks: [\r\n        ...tasksAfterUpdate\r\n      ]\r\n    });\r\n  }\r\n\r\n  @Action(SortTasksByCreatedAt)\r\n  sortTasksByCreatedAt(\r\n    {getState, patchState}: StateContext<TaskStateModel>, {payload}: SortTasksByCreatedAt\r\n  ): Observable<Array<TaskModel>> {\r\n\r\n\r\n    const completedTasks = getState().tasks?.filter(task => task.state === 'COMPLETED');\r\n    let sortedTasks = new Array<TaskModel>();\r\n    if (completedTasks && payload === 'asc') {\r\n      sortedTasks = completedTasks.sort((a, b) => a.insertedDate.getTime() - b.insertedDate.getTime());\r\n    } else if (completedTasks && payload === 'desc') {\r\n      sortedTasks = completedTasks.sort((a, b) => b.insertedDate.getTime() - a.insertedDate.getTime());\r\n    }\r\n\r\n    return of(sortedTasks);\r\n\r\n  }\r\n\r\n  @Action(SortTasksByCompletedAt)\r\n  sortTasksByCompletedAt(\r\n    {getState, patchState}: StateContext<TaskStateModel>, {payload}: SortTasksByCompletedAt\r\n  ): Array<TaskModel> {\r\n\r\n\r\n    const completedTasks = getState().tasks?.filter(task => task.state === 'COMPLETED');\r\n    let sortedTasks = new Array<TaskModel>();\r\n    if (completedTasks && payload === 'asc') {\r\n      sortedTasks = completedTasks.sort((a, b) => {\r\n        if (a.endDate && b.endDate) {\r\n          return a.endDate.getTime() - b.endDate.getTime();\r\n        } else {\r\n          return 0;\r\n        }\r\n      });\r\n    } else if (completedTasks && payload === 'desc') {\r\n      sortedTasks = completedTasks.sort((a, b) => {\r\n        if (a.endDate && b.endDate) {\r\n          return b.endDate.getTime() - a.endDate.getTime();\r\n        } else {\r\n          return 0;\r\n        }\r\n      });\r\n    }\r\n\r\n    return sortedTasks;\r\n\r\n  }\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "tasks",
+                    "type": "Array<TaskModel> | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                }
+            ],
+            "methods": [],
+            "indexSignatures": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
+        }
+    ],
+    "directives": [],
+    "components": [
+        {
+            "name": "AddNewTaskComponent",
+            "id": "component-AddNewTaskComponent-d4d474a9c49715b10d3c5067958f6328",
+            "file": "src/app/tasks/components/add-new-task/add-new-task.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-add-new-task",
+            "styleUrls": [
+                "./add-new-task.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./add-new-task.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "newTaskForm",
+                    "defaultValue": "new FormGroup({})",
+                    "type": "FormGroup",
+                    "optional": false,
+                    "description": "",
+                    "line": 13
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "initializeForm",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "modifierKind": [
+                        112
+                    ]
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                },
+                {
+                    "name": "onSubmit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, OnInit} from '@angular/core';\nimport {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';\nimport {Store} from '@ngxs/store';\nimport {AddTask} from '../../actions/task.actions';\n\n@Component({\n  selector: 'app-add-new-task',\n  templateUrl: './add-new-task.component.html',\n  styleUrls: ['./add-new-task.component.scss']\n})\nexport class AddNewTaskComponent implements OnInit {\n\n  newTaskForm: FormGroup = new FormGroup({});\n\n  constructor(\n    private store: Store\n  ) { }\n\n  ngOnInit(): void {\n    this.initializeForm();\n  }\n\n  get formControls(): { [p: string]: AbstractControl } | undefined {\n    return this.newTaskForm?.controls;\n  }\n\n  onSubmit(): void {\n    if (this.newTaskForm?.invalid) {\n      return;\n    }\n\n    this.store.dispatch(new AddTask(this.formControls.title.value));\n\n    this.initializeForm();\n  }\n\n  private initializeForm(): void {\n    this.newTaskForm = new FormGroup({\n      title: new FormControl(null, {validators: [Validators.required]})\n    });\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./add-new-task.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "accessors": {
+                "formControls": {
+                    "name": "formControls",
+                    "getSignature": {
+                        "name": "formControls",
+                        "type": "",
+                        "returnType": "literal type | undefined",
+                        "line": 23
+                    }
+                }
+            },
+            "templateData": "<form [formGroup]=\"newTaskForm\" (ngSubmit)=\"onSubmit()\">\n  <div fxLayout.gt-sm=\"row\" fxLayout.lt-md=\"column\" fxLayoutGap=\"2rem\"\n       fxLayoutAlign.gt-sm=\"start start\" fxLayoutAlign.lt-md=\"start center\">\n    <mat-form-field style=\"width: 50%\">\n      <mat-label>Task Title</mat-label>\n      <input type=\"text\" matInput formControlName=\"title\">\n      <mat-error *ngIf=\"formControls.title?.invalid && formControls.title?.errors?.required\">\n        Task Title is required\n      </mat-error>\n    </mat-form-field>\n\n    <button mat-raised-button color=\"primary\" type=\"submit\">\n      <span class=\"material-icons\">add_task</span> Add\n    </button>\n  </div>\n</form>\n"
+        },
+        {
+            "name": "AppComponent",
+            "id": "component-AppComponent-980c6a7c4b9772d520048165d2a23432",
+            "file": "src/app/app.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-root",
+            "styleUrls": [
+                "./app.component.css"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./app.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "title",
+                    "defaultValue": "'to-do-app'",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 9
+                }
+            ],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent {\n  title = 'to-do-app';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./app.component.css"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<main>\n  <app-tasks-main-screen></app-tasks-main-screen>\n</main>\n"
+        },
+        {
+            "name": "ButtonComponent",
+            "id": "component-ButtonComponent-642c6c4e474cd5a0ac760dfda26b2fc9",
+            "file": "src/stories/button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-button",
+            "styleUrls": [
+                "./button.css"
+            ],
+            "styles": [],
+            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "backgroundColor",
+                    "description": "<p>What background color to use</p>\n",
+                    "line": 26,
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "defaultValue": "'Button'",
+                    "description": "<p>Button contents</p>\n",
+                    "line": 40
+                },
+                {
+                    "name": "primary",
+                    "defaultValue": "false",
+                    "description": "<p>Is this the principal call to action on the page?</p>\n",
+                    "line": 20
+                },
+                {
+                    "name": "size",
+                    "defaultValue": "'medium'",
+                    "description": "<p>How large should the button be?</p>\n",
+                    "line": 32,
+                    "type": "\"small\" | \"medium\" | \"large\""
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onClick",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "description": "<p>Optional click handler</p>\n",
+                    "line": 46,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
+                    "styleUrl": "./button.css"
+                }
+            ],
+            "stylesData": "",
+            "accessors": {
+                "classes": {
+                    "name": "classes",
+                    "getSignature": {
+                        "name": "classes",
+                        "type": "[]",
+                        "returnType": "string[]",
+                        "line": 48
+                    }
+                }
+            }
+        },
+        {
+            "name": "HeaderComponent",
+            "id": "component-HeaderComponent-246e2a69dc126a3bd76c6328dd3b93e2",
+            "file": "src/stories/header.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-header",
+            "styleUrls": [
+                "./header.css"
+            ],
+            "styles": [],
+            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "line": 53,
+                    "type": "unknown"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 62,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 56,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 59,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <storybook-button\n          *ngIf=\"user\"\n          size=\"small\"\n          (onClick)=\"onLogout.emit($event)\"\n          label=\"Log out\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          size=\"small\"\n          (onClick)=\"onLogin.emit($event)\"\n          label=\"Log in\"\n        ></storybook-button>\n        <storybook-button\n          *ngIf=\"!user\"\n          primary\n          size=\"small\"\n          (onClick)=\"onCreateAccount.emit($event)\"\n          label=\"Sign up\"\n        ></storybook-button>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n",
+                    "styleUrl": "./header.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "PageComponent",
+            "id": "component-PageComponent-cca1a8911321fa17756ce90c90de65cc",
+            "file": "src/stories/page.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "storybook-page",
+            "styleUrls": [
+                "./page.css"
+            ],
+            "styles": [],
+            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "user",
+                    "defaultValue": "null",
+                    "line": 66,
+                    "type": "unknown"
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "onCreateAccount",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 75,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogin",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 69,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "onLogout",
+                    "defaultValue": "new EventEmitter<Event>()",
+                    "line": 72,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"onLogout.emit($event)\"\n      (onLogin)=\"onLogin.emit($event)\"\n      (onCreateAccount)=\"onCreateAccount.emit($event)\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://www.learnstorybook.com\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Learn Storybook\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\">\n          docs\n        </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  @Input()\n  user: unknown = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n\n// export const Page = ({ user, onLogin, onLogout, onCreateAccount }) => (\n//   <article>\n//     <Header user={user} onLogin={onLogin} onLogout={onLogout} onCreateAccount={onCreateAccount} />\n\n// );\n// Page.propTypes = {\n//   user: PropTypes.shape({}),\n//   onLogin: PropTypes.func.isRequired,\n//   onLogout: PropTypes.func.isRequired,\n//   onCreateAccount: PropTypes.func.isRequired,\n// };\n\n// Page.defaultProps = {\n//   user: null,\n// };\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nh2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\np {\n  margin: 1em 0;\n}\n\na {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nli {\n  margin-bottom: 8px;\n}\n\n.tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\n.tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\n.tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\n.tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
+                    "styleUrl": "./page.css"
+                }
+            ],
+            "stylesData": ""
+        },
+        {
+            "name": "TaskComponent",
+            "id": "component-TaskComponent-56b4a3dd2376190e325f194d645a4f65",
+            "file": "src/app/tasks/components/task/task.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-task",
+            "styleUrls": [
+                "./task.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./task.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "task",
+                    "line": 13,
+                    "type": "TaskModel"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                },
+                {
+                    "name": "onCompleteTask",
+                    "args": [
+                        {
+                            "name": "taskId",
+                            "type": "number | undefined"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "jsdoctags": [
+                        {
+                            "name": "taskId",
+                            "type": "number | undefined",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onDeleteTask",
+                    "args": [
+                        {
+                            "name": "taskId",
+                            "type": "number | undefined"
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "jsdoctags": [
+                        {
+                            "name": "taskId",
+                            "type": "number | undefined",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport {TaskModel} from '../../models/task.model';\nimport {Store} from '@ngxs/store';\nimport {CompleteTask, RemoveTask} from '../../actions/task.actions';\n\n@Component({\n  selector: 'app-task',\n  templateUrl: './task.component.html',\n  styleUrls: ['./task.component.scss']\n})\nexport class TaskComponent implements OnInit {\n\n  @Input() task?: TaskModel;\n\n  constructor(\n    private store: Store\n  ) { }\n\n  ngOnInit(): void {\n  }\n\n  onCompleteTask(taskId: number | undefined): void {\n    if (taskId) {\n      this.store.dispatch(new CompleteTask(taskId));\n    }\n  }\n\n  onDeleteTask(taskId: number | undefined): void {\n    if (taskId) {\n      this.store.dispatch(new RemoveTask(taskId));\n    }\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "mat-card {\r\n  margin: 1rem;\r\n}\r\n",
+                    "styleUrl": "./task.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [
+                    {
+                        "name": "store",
+                        "type": "Store"
+                    }
+                ],
+                "line": 13,
+                "jsdoctags": [
+                    {
+                        "name": "store",
+                        "type": "Store",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<mat-card>\n  <div fxLayout=\"row\" fxLayoutAlign=\"space-between center\">\n\n    <span class=\"mat-h2\" fxFlex=\"50\">{{task?.title}}</span>\n\n    <span fxFlex=\"30\">\n      <span class=\"mat-h5\">Created at:</span><span class=\"mat-h6\">{{task?.insertedDate | date : 'medium'}}</span>\n    </span>\n\n    <span fxFlex=\"30\" *ngIf=\"task?.state === 'COMPLETED'\">\n      <span class=\"mat-h5\">Completed at:</span><span class=\"mat-h6\">{{task?.endDate | date : 'medium'}}</span>\n    </span>\n\n    <button fxFlex=\"10\" *ngIf=\"task?.state === 'TO_DO'\" mat-icon-button color=\"primary\"\n            (click)=\"onCompleteTask(task?.id)\" matTooltip=\"Complete Task\">\n      <mat-icon>done</mat-icon>\n    </button>\n\n    <button fxFlex=\"10\" mat-icon-button (click)=\"onDeleteTask(task?.id)\" matTooltip=\"Delete Task\" color=\"warn\">\n      <mat-icon>delete_forever</mat-icon>\n    </button>\n  </div>\n</mat-card>\n"
+        },
+        {
+            "name": "TaskListComponent",
+            "id": "component-TaskListComponent-906a540a91252dc9b4db4ec98aa881c9",
+            "file": "src/app/tasks/components/task-list/task-list.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-task-list",
+            "styleUrls": [
+                "./task-list.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./task-list.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "taskList$",
+                    "line": 12,
+                    "type": "Observable<Array<TaskModel>> | undefined"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 16
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import {Component, Input, OnInit} from '@angular/core';\nimport {TaskModel} from '../../models/task.model';\nimport {Observable} from 'rxjs';\n\n@Component({\n  selector: 'app-task-list',\n  templateUrl: './task-list.component.html',\n  styleUrls: ['./task-list.component.scss']\n})\nexport class TaskListComponent implements OnInit {\n\n  @Input() taskList$: Observable<Array<TaskModel>> | undefined;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./task-list.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 12
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-task *ngFor=\"let task of taskList$ | async\"\n          [task]=\"task\"\n></app-task>\n"
+        },
+        {
+            "name": "TasksMainScreenComponent",
+            "id": "component-TasksMainScreenComponent-058a33fa667f612ad72532140db84ecb",
+            "file": "src/app/tasks/components/tasks-main-screen/tasks-main-screen.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-tasks-main-screen",
+            "styleUrls": [
+                "./tasks-main-screen.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./tasks-main-screen.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "completedTasks$",
+                    "type": "Observable<Array<TaskModel>> | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "decorators": [
+                        {
+                            "name": "Select",
+                            "stringifiedArguments": "TaskState.getCompletedTasks"
+                        }
+                    ]
+                },
+                {
+                    "name": "toDoTasks$",
+                    "type": "Observable<Array<TaskModel>> | undefined",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "decorators": [
+                        {
+                            "name": "Select",
+                            "stringifiedArguments": "TaskState.getToDoTasks"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport {Select} from '@ngxs/store';\nimport {Observable} from 'rxjs';\nimport {TaskModel} from '../../models/task.model';\nimport {TaskState} from '../../states/task.state';\n\n@Component({\n  selector: 'app-tasks-main-screen',\n  templateUrl: './tasks-main-screen.component.html',\n  styleUrls: ['./tasks-main-screen.component.scss']\n})\nexport class TasksMainScreenComponent implements OnInit {\n\n  @Select(TaskState.getToDoTasks) toDoTasks$: Observable<Array<TaskModel>> | undefined;\n  @Select(TaskState.getCompletedTasks) completedTasks$: Observable<Array<TaskModel>> | undefined;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".title-message {\r\n  font-weight: 800;\r\n  color: #777;\r\n}\r\n",
+                    "styleUrl": "./tasks-main-screen.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<app-add-new-task></app-add-new-task>\n\n<div fxLayout.gt-sm=\"row\" fxLayout.lt-md=\"column\" fxLayoutAlign.gt-sm=\"start start\" fxLayoutAlign.lt-md=\"center center\"\n     style=\"width: 100%\">\n  <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxFlex.gt-sm=\"50\">\n    <span class=\"mat-h1\">To Do</span>\n    <app-task-list [taskList$]=\"toDoTasks$\" style=\"width: 100%\"></app-task-list>\n\n    <div *ngIf=\"(toDoTasks$ | async)?.length === 0\" class=\"wrapper-message\">\n      <div class=\"title-message\">You have No To Do Tasks</div>\n    </div>\n\n  </div>\n\n  <div fxLayout=\"column\" fxLayoutAlign=\"center center\" fxFlex.gt-sm=\"50\">\n    <span class=\"mat-h1\">Completed</span>\n    <app-task-list [taskList$]=\"completedTasks$\" style=\"width: 100%\"></app-task-list>\n    <div *ngIf=\"(completedTasks$ | async)?.length === 0\" class=\"wrapper-message\">\n      <div class=\"title-message\">You have No Completed Tasks</div>\n    </div>\n  </div>\n</div>\n"
+        }
+    ],
+    "modules": [
+        {
+            "name": "AppModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        },
+                        {
+                            "name": "TasksModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": [
+                        {
+                            "name": "AppComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "MaterialModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": []
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "SharedModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": []
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "MaterialModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
+            "name": "TasksModule",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "AddNewTaskComponent"
+                        },
+                        {
+                            "name": "TaskComponent"
+                        },
+                        {
+                            "name": "TaskListComponent"
+                        },
+                        {
+                            "name": "TasksMainScreenComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": [
+                        {
+                            "name": "SharedModule"
+                        }
+                    ]
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "AddNewTaskComponent"
+                        },
+                        {
+                            "name": "TaskListComponent"
+                        },
+                        {
+                            "name": "TasksMainScreenComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        }
+    ],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "Large",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedIn",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "LoggedOut",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "mock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/jest-config/__mocks__/globalMocks.ts",
+                "type": "",
+                "defaultValue": "() => {\n    let storage = {};\n    return {\n      getItem: key => (key in storage ? storage[key] : null),\n      setItem: (key, value) => (storage[key] = value || ''),\n      removeItem: key => delete storage[key],\n      clear: () => (storage = {}),\n    };\n  }"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Small",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Button.stories.ts",
+                "type": "Story<Button>",
+                "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Header.stories.ts",
+                "type": "Story<Header>",
+                "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/Page.stories.ts",
+                "type": "Story<Page>",
+                "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+            }
+        ],
+        "functions": [],
+        "typealiases": [],
+        "enumerations": [],
+        "groupedVariables": {
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
+                }
+            ],
+            "src/environments/environment.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/Button.stories.ts": [
+                {
+                    "name": "Large",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Small",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Button.stories.ts",
+                    "type": "Story<Button>",
+                    "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Header.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Header.stories.ts",
+                    "type": "Story<Header>",
+                    "defaultValue": "(args: Header) => ({\n  component: Header,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/Page.stories.ts": [
+                {
+                    "name": "LoggedIn",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "LoggedOut",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/Page.stories.ts",
+                    "type": "Story<Page>",
+                    "defaultValue": "(args: Page) => ({\n  component: Page,\n  props: args,\n})"
+                }
+            ],
+            "src/jest-config/__mocks__/globalMocks.ts": [
+                {
+                    "name": "mock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/jest-config/__mocks__/globalMocks.ts",
+                    "type": "",
+                    "defaultValue": "() => {\n    let storage = {};\n    return {\n      getItem: key => (key in storage ? storage[key] : null),\n      setItem: (key, value) => (storage[key] = value || ''),\n      removeItem: key => delete storage[key],\n      clear: () => (storage = {}),\n    };\n  }"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {}
+    },
+    "routes": [],
+    "coverage": {
+        "count": 2,
+        "status": "low",
+        "files": [
+            {
+                "filePath": "src/app/app.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AppComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/actions/task.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "AddTask",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/actions/task.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "CompleteTask",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/actions/task.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "RemoveTask",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/actions/task.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "SortTasksByCompletedAt",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/actions/task.actions.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "SortTasksByCreatedAt",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/components/add-new-task/add-new-task.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AddNewTaskComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/components/task-list/task-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/components/task/task.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TaskComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/components/tasks-main-screen/tasks-main-screen.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TasksMainScreenComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/models/task.model.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "TaskModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/states/task.state.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "TaskState",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/states/task.state.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "TaskStateModel",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.prod.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/environments/environment.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "environment",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/jest-config/__mocks__/globalMocks.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "mock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Large",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Small",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Header.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedIn",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LoggedOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/Page.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/button.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ButtonComponent",
+                "coveragePercent": 83,
+                "coverageCount": "5/6",
+                "status": "very-good"
+            },
+            {
+                "filePath": "src/stories/header.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HeaderComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/page.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "PageComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            }
+        ]
+    }
+}
