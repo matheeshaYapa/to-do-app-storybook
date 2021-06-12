@@ -2,13 +2,14 @@ import {TaskComponent} from '../components/task/task.component';
 import {moduleMetadata, Meta, Story} from '@storybook/angular';
 import {CommonModule} from '@angular/common';
 import {action} from '@storybook/addon-actions';
+import {SharedModule} from '../../shared/shared.module';
 
 export default {
   component: TaskComponent,
   decorators: [
     moduleMetadata({
       declarations: [TaskComponent],
-      imports: [CommonModule]
+      imports: [CommonModule, SharedModule]
     })
   ],
   excludeStories: /.*Data$/,
@@ -16,8 +17,8 @@ export default {
 } as Meta;
 
 export const actionsData = {
-  completeTask: action('completeTask'),
-  removeTask: action('removeTask')
+  completeTask: action('onCompleteTask'),
+  removeTask: action('onDeleteTask')
 };
 
 const Template: Story<TaskComponent> = args => ({

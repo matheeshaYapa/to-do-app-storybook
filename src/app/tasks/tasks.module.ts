@@ -18,6 +18,7 @@ import { TasksMainScreenComponent } from './components/tasks-main-screen/tasks-m
     TasksMainScreenComponent
   ],
   exports: [
+    TaskComponent,
     AddNewTaskComponent,
     TaskListComponent,
     TasksMainScreenComponent

@@ -1412,7 +1412,15 @@
                 "subtype": "variable",
                 "file": "src/app/tasks/stories/task.stories.ts",
                 "type": "object",
-                "defaultValue": "{\r\n  completeTask: action('completeTask'),\r\n  removeTask: action('removeTask')\r\n}"
+                "defaultValue": "{\r\n  completeTask: action('onCompleteTask'),\r\n  removeTask: action('onDeleteTask')\r\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tasks/stories/tasks-main-screen.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "DefaultCompleted",
@@ -1549,6 +1557,14 @@
                 "file": "src/app/tasks/stories/task.stories.ts",
                 "type": "Story<TaskComponent>",
                 "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    completeTask: actionsData.completeTask,\r\n    removeTask: actionsData.removeTask\r\n  }\r\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/tasks/stories/tasks-main-screen.stories.ts",
+                "type": "Story<TasksMainScreenComponent>",
+                "defaultValue": "args => ({\r\n  props: args\r\n})"
             }
         ],
         "functions": [],
@@ -1562,7 +1578,7 @@
                     "subtype": "variable",
                     "file": "src/app/tasks/stories/task.stories.ts",
                     "type": "object",
-                    "defaultValue": "{\r\n  completeTask: action('completeTask'),\r\n  removeTask: action('removeTask')\r\n}"
+                    "defaultValue": "{\r\n  completeTask: action('onCompleteTask'),\r\n  removeTask: action('onDeleteTask')\r\n}"
                 },
                 {
                     "name": "DefaultCompleted",
@@ -1587,6 +1603,24 @@
                     "file": "src/app/tasks/stories/task.stories.ts",
                     "type": "Story<TaskComponent>",
                     "defaultValue": "args => ({\r\n  props: {\r\n    ...args,\r\n    completeTask: actionsData.completeTask,\r\n    removeTask: actionsData.removeTask\r\n  }\r\n})"
+                }
+            ],
+            "src/app/tasks/stories/tasks-main-screen.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tasks/stories/tasks-main-screen.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/tasks/stories/tasks-main-screen.stories.ts",
+                    "type": "Story<TasksMainScreenComponent>",
+                    "defaultValue": "args => ({\r\n  props: args\r\n})"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -1872,6 +1906,26 @@
             },
             {
                 "filePath": "src/app/tasks/stories/task.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/stories/tasks-main-screen.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/tasks/stories/tasks-main-screen.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
